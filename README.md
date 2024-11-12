@@ -43,8 +43,7 @@ For an input image, the output might look something like:
 ```
 
 ## Resources
-* Robert Heaton's ASCII Art Tutorial - Inspiration for this project.
-* ASCII Art Gallery - More ASCII art examples and ideas.
+* [Robert Heaton's ASCII Art Tutorial](https://robertheaton.com/2018/06/12/programming-projects-for-advanced-beginners-ascii-art/) - Inspiration for this project.
 
 ## License
 
