@@ -7,6 +7,7 @@ Welcome to the **ASCII Art Image Converter** project! This Java application is d
 * Understand image processing basics, including pixel manipulation and grayscale conversion.
 * Explore loops, conditional statements, and basic data structures in Java.
 * Develop a command-line Java application that takes image input and produces ASCII output.
+* Implement Design Patterns.
 
 ## Getting Started
 
