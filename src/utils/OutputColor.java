@@ -12,7 +12,6 @@ public enum OutputColor {
   ANSI_CYAN("\u001B[36m"),
   ANSI_WHITE("\u001B[37m");
   
-  @SuppressWarnings("unused")
   private String colorCode;
 
   OutputColor(String colorCode) {
@@ -21,7 +20,7 @@ public enum OutputColor {
 
   @Override
   public String toString() {
-    return name();
+    return colorCode;
   }
 
 }

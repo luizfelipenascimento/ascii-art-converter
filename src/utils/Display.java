@@ -1,8 +1,11 @@
 package utils;
 
 public class Display {
+  public static void error(Error error) {
+    System.out.println(OutputColor.ANSI_RED.toString() + " " +error.toString());
+    System.out.print(OutputColor.ANSI_RESET);
+  }
 
-  
   public static void arrayValues (int[] array) {
     for (int i = 0; i < array.length; i++) {
       System.out.println(array[i]);
@@ -22,7 +25,8 @@ public class Display {
     }
   }
 
-  public static void asciiArrayImage (char[] array, int width, int height) {
+  public static void asciiArrayImage (char[] array, int width, int height, OutputColor color) {
+    System.out.print(color);
     for (int i = 0; i < array.length; i++) {
       if(i % width == 0) System.err.println();
       System.out.print(array[i]);
