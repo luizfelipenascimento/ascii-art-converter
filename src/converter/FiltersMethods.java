@@ -2,7 +2,7 @@ package converter;
 
 import java.awt.image.BufferedImage;
 
-public class ConvertionMethods {
+public class FiltersMethods {
   public enum Options { RGB_TO_AVARAGE_BRIGHTNESS }
 
   public static int[] rgbToAverageBrightness (BufferedImage image) {

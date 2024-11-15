@@ -5,8 +5,8 @@ public class AsciiArtConverter {
 
   private final static String mapChars = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"; 
 
-  public static char[] convert (BufferedImage image, ConvertionMethods.Options method) {
-    int[] pixelArray = ConvertionMethods.rgbToAverageBrightness(image);
+  public static char[] convert (BufferedImage image, FiltersMethods.Options method) {
+    int[] pixelArray = FiltersMethods.rgbToAverageBrightness(image);
     char[] asciiPixel = new char[image.getWidth() * image.getHeight()];
     for (int i = 0; i < asciiPixel.length; i++) {
       int index = (int)((pixelArray[i] / 255.0) * (mapChars.length() - 1));
