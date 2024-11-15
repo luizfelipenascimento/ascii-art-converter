@@ -1,6 +1,6 @@
 package validation;
 
-import Errors.MissingParameterError;
+import errors.MissingParameterError;
 
 public class RequiredParam implements Validation {
   private String requiredParam;
