@@ -6,9 +6,9 @@ import javax.imageio.ImageIO;
 
 import converter.RequestedConfiguration;
 import errors.FileNotFound;
+import factories.ConfigurationFactory;
 import factories.ValidationFactory;
 import converter.AsciiArtConverter;
-import converter.ConfigurationFactory;
 import utils.Display;
 import validation.Validation;
 
@@ -16,8 +16,14 @@ class App {
 
   public static void main(String[] args) {
     try {
+      for (String arg : args) {
+        if (arg.equals("-h") || arg.equals("--help")) {
+          System.out.println(Display.helpContent());
+          System.exit(0);
+        }
+      }
+
       Validation validation = new ValidationFactory().makeValidation();
-      
       Error error = validation.validate(args);
       if (error != null) {
         Display.error(error);
