@@ -1,5 +1,6 @@
-package converter;
+package factories;
 
+import converter.RequestedConfiguration;
 import utils.ColorHelper;
 
 public class ConfigurationFactory {
@@ -13,7 +14,7 @@ public class ConfigurationFactory {
   public RequestedConfiguration getRequestedConfiguration () {
     RequestedConfiguration config = new RequestedConfiguration();
     for (int i = 0; i < input.length; i++) {
-      if (input[i].equals("-i")) {
+      if (input[i].equals("-i") || input[i].equals("--image")) {
         config.setImagePath(input[i + 1]);
         continue;
       }

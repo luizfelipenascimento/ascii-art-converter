@@ -15,7 +15,8 @@ import validation.Validation;
 class App {
 
   public static void main(String[] args) {
-    try {
+
+     try {
       for (String arg : args) {
         if (arg.equals("-h") || arg.equals("--help")) {
           System.out.println(Display.helpContent());
@@ -23,8 +24,8 @@ class App {
         }
       }
 
-      Validation validation = new ValidationFactory().makeValidation();
-      Error error = validation.validate(args);
+      Validation requestValidation = new ValidationFactory().makeValidation();
+      Error error = requestValidation.validate(args);
       if (error != null) {
         Display.error(error);
         System.exit(1);
