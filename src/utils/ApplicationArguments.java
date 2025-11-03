@@ -10,7 +10,7 @@ public class ApplicationArguments {
 
   public static Argument getArgumentByKey(String key) {
     for (Argument arg : allowedArguments) {
-      if (arg.key.equals(key) || arg.altName != null && arg.altName.equals(key)) {
+      if (arg.key.equals(key) || arg.altKey != null && arg.altKey.equals(key)) {
         return arg;
       }
     }
@@ -19,19 +19,19 @@ public class ApplicationArguments {
 
   public static class Argument {
     public final String key;
-    public final String altName;
+    public final String altKey;
     public final String details;
     
-    public Argument(String key, String details, String altName) {
+    public Argument(String key, String details, String altKey) {
       this.key = key;
-      this.altName = altName;
+      this.altKey = altKey;
       this.details = details;
     }
 
     public Argument(String key, String details) {
       this.key = key;
       this.details = details;
-      this.altName = null;
+      this.altKey = null;
     }
   }
 }
