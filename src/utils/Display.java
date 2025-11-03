@@ -37,7 +37,7 @@ public class Display {
     return "Usage: java -jar ascii-art-converter.jar -i <image_path> [-color <color>] [-filter <filter_method>]\n" +
          "Options:\n" +
          "  -i, --image <image_path>   Path to the image file to convert.\n" +
-         "  -color <color>             Output color for the ASCII art (default: ANSI_WHITE).\n" +
+         "  -color <color>             Output color for the ASCII art (default: white).\n" +
          "      Available colors: red, green, yellow, blue, purple, cyan, white\n" +
          "  -filter <filter_method>    Filter method to apply (e.g., 'nearest', 'bilinear').\n" +
          "  -h, --help                 Display this help message.";
