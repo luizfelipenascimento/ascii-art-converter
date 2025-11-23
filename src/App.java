@@ -5,8 +5,10 @@ import converter.RequestedConfiguration;
 import factories.ConfigurationFactory;
 import factories.ValidationFactory;
 import converter.AsciiArtConverter;
+import converter.ImageANSIColorMapper;
 import converter.ImageLoader;
 import utils.Display;
+import utils.OutputColor;
 import validation.Validation;
 
 class App {
@@ -33,8 +35,16 @@ class App {
 
       BufferedImage img = ImageLoader.load(config.getImagePath());
       char[] asciiResult = AsciiArtConverter.convert(img, config);
-      Display.asciiArrayImage(asciiResult, img.getWidth(), img.getHeight(), config.getOutputColor());
 
+      OutputColor outputColor = config.getOutputColor();
+      if (outputColor.equals(OutputColor.COLORFUL)) {
+        int[] imRGB = img.getRGB(0, 0, img.getWidth(), img.getHeight(), null, 0, img.getWidth());
+        Display.asciiArrayColourfullImage(asciiResult, ImageANSIColorMapper.map(imRGB), img.getWidth(), img.getHeight());
+      }
+      else {
+        Display.asciiArrayImage(asciiResult, img.getWidth(), img.getHeight(), outputColor);
+      }
+      
     } catch (IOException e) {
       e.printStackTrace();
     }

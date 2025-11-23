@@ -20,7 +20,7 @@ public class ConfigurationFactory {
       }
       
       if (input[i].equals("-color")) {
-        config.setOutputcolor(ColorHelper.getColor(input[i + 1]));
+        config.setOutputcolor(ColorHelper.getColorCode(input[i + 1]));
         continue;
       }
 
