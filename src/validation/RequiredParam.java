@@ -13,7 +13,7 @@ public class RequiredParam implements Validation {
   @Override
   public Error validate(String[] input) {
     for (String param : input) {
-      if (param.equals(requiredArgument.key)) {
+      if (param.equals(requiredArgument.key) || param.equals(requiredArgument.altKey)) {
         return null;
       }
     }

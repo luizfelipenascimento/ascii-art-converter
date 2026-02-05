@@ -3,7 +3,7 @@ package utils;
 public class ApplicationArguments {
   
   static final Argument[] allowedArguments = {
-    new Argument("-i", "Image path", "--image"),
+    new Argument("--image", "Image path", "-i"),
     new Argument("-color", "Color attribute"),
     new Argument("-filter", "Filter attribute")
   }; 

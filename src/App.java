@@ -37,6 +37,7 @@ class App {
       char[] asciiResult = AsciiArtConverter.convert(img, config);
 
       OutputColor outputColor = config.getOutputColor();
+      
       if (outputColor.equals(OutputColor.COLORFUL)) {
         int[] imRGB = img.getRGB(0, 0, img.getWidth(), img.getHeight(), null, 0, img.getWidth());
         Display.asciiArrayColourfullImage(asciiResult, ImageANSIColorMapper.map(imRGB), img.getWidth(), img.getHeight());
