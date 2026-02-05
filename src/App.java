@@ -14,7 +14,7 @@ class App {
 
   public static void main(String[] args) {
 
-     try {
+    try {
       for (String arg : args) {
         if (arg.equals("-h") || arg.equals("--help")) {
           System.out.println(Display.helpContent());
@@ -24,7 +24,7 @@ class App {
 
       Validation requestValidation = new ValidationFactory().makeValidation();
       requestValidation.validate(args);
-  
+
       RequestedConfiguration config = new ConfigurationFactory(args)
           .getRequestedConfiguration();
 
@@ -32,20 +32,23 @@ class App {
       char[] asciiResult = AsciiArtConverter.convert(img, config);
 
       OutputColor outputColor = config.getOutputColor();
-      
+
       if (outputColor.equals(OutputColor.COLORFUL)) {
         int[] imRGB = img.getRGB(0, 0, img.getWidth(), img.getHeight(), null, 0, img.getWidth());
-        Display.asciiArrayColourfullImage(asciiResult, ImageANSIColorMapper.map(imRGB), img.getWidth(), img.getHeight());
-      }
-      else {
+        Display.asciiArrayColourfullImage(asciiResult, ImageANSIColorMapper.map(imRGB), img.getWidth(),
+            img.getHeight());
+      } else {
         Display.asciiArrayImage(asciiResult, img.getWidth(), img.getHeight(), outputColor);
       }
-      
+
     } catch (Exception e) {
       if (e instanceof IllegalArgumentException argumentException) {
-         Display.error(argumentException);
-         System.exit(1);
+        Display.error(argumentException);
+      } else {
+        e.printStackTrace();
       }
+
+      System.exit(1);
     }
   }
 }
