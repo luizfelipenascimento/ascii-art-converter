@@ -2,10 +2,10 @@ package errors;
 
 import utils.ApplicationArguments.Argument;
 
-public class MissingParameterError extends Error {
+public class MissingParameterException extends IllegalArgumentException {
   private String details;
   
-  public MissingParameterError(Argument argument) {
+  public MissingParameterException(Argument argument) {
     super("MissingParameterError");
     details = argument.key + ": " + argument.details + " param is required";
   }

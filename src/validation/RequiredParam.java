@@ -1,6 +1,6 @@
 package validation;
 
-import errors.MissingParameterError;
+import errors.MissingParameterException;
 import utils.ApplicationArguments.Argument;
 
 public class RequiredParam implements Validation {
@@ -17,6 +17,6 @@ public class RequiredParam implements Validation {
         return null;
       }
     }
-    return new MissingParameterError(requiredArgument);
+    throw new MissingParameterException(requiredArgument);
   }
 }

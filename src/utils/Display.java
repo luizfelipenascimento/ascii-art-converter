@@ -1,7 +1,7 @@
 package utils;
 
 public class Display {
-  public static void error(Error error) {
+  public static void error(Exception error) {
     System.out.println(OutputColor.ANSI_RED.toString() + " " +error.toString());
     System.out.print(OutputColor.ANSI_RESET);
   }

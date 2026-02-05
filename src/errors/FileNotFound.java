@@ -1,6 +1,6 @@
 package errors;
 
-public class FileNotFound extends Error {
+public class FileNotFound extends RuntimeException {
   private String details;
   
   public FileNotFound(String path) {

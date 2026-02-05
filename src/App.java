@@ -1,5 +1,4 @@
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
 import converter.RequestedConfiguration;
 import factories.ConfigurationFactory;
@@ -24,12 +23,8 @@ class App {
       }
 
       Validation requestValidation = new ValidationFactory().makeValidation();
-      Error error = requestValidation.validate(args);
-      if (error != null) {
-        Display.error(error);
-        System.exit(1);
-      }
-
+      requestValidation.validate(args);
+  
       RequestedConfiguration config = new ConfigurationFactory(args)
           .getRequestedConfiguration();
 
@@ -46,8 +41,11 @@ class App {
         Display.asciiArrayImage(asciiResult, img.getWidth(), img.getHeight(), outputColor);
       }
       
-    } catch (IOException e) {
-      e.printStackTrace();
+    } catch (Exception e) {
+      if (e instanceof IllegalArgumentException argumentException) {
+         Display.error(argumentException);
+         System.exit(1);
+      }
     }
   }
 }
